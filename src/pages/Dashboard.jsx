@@ -20,6 +20,13 @@ export default function Dashboard() {
     setStats(storedStats);
   }, []);
 
+  const clearHistory = () => {
+    if (window.confirm("Are you sure you want to delete all your typing history?")) {
+      localStorage.removeItem("typeSprintStats");
+      setStats([]);
+    }
+  };
+
   const chartData = {
     labels: stats.map((entry) => entry.date),
     datasets: [
@@ -58,6 +65,15 @@ export default function Dashboard() {
         <p className="text-center text-gray-600">No typing history yet. Play a challenge first!</p>
       ) : (
         <>
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={clearHistory}
+              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+            >
+              Clear History
+            </button>
+          </div>
+
           <div className="bg-white p-6 rounded shadow mb-10">
             <Line data={chartData} options={chartOptions} />
           </div>

@@ -7,7 +7,7 @@ export default function Navbar() {
         TypeSprint
       </Link>
       <div className="space-x-4">
-        <Link to="/levels" className="text-gray-700 hover:text-indigo-600 font-medium">
+        <Link to="/challenge" className="text-gray-700 hover:text-indigo-600 font-medium">
           Start
         </Link>
         <Link to="/dashboard" className="text-gray-700 hover:text-indigo-600 font-medium">

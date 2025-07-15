@@ -12,8 +12,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/levels" element={<Levels />} />
-        <Route path="/challenge/:level" element={<Challenge />} />
+        <Route path="/challenge" element={<Challenge />} />
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
