@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -81,20 +82,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-white py-6 mt-auto text-center">
-        <div className="text-sm">
-          © {new Date().getFullYear()}{" "}
-          <span className="font-semibold text-indigo-400">TypeSprint</span>. All rights reserved.
-        </div>
-        <div className="mt-2 space-x-4">
-          <Link to="/dashboard" className="hover:underline text-gray-300">
-            Dashboard
-          </Link>
-          <Link to="/challenge" className="hover:underline text-gray-300">
-            Start Challenge
-          </Link>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
