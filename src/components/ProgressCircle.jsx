@@ -3,6 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 export default function ProgressCircle({ timeLeft, totalTime }) {
   const percentage = Math.round((timeLeft / totalTime) * 100);
+  const isLow = percentage <= 20;
 
   return (
     <div style={{ width: 80, height: 80 }}>
@@ -10,10 +11,11 @@ export default function ProgressCircle({ timeLeft, totalTime }) {
         value={percentage}
         text={`${timeLeft}s`}
         styles={buildStyles({
-          pathColor: percentage <= 20 ? "#dc2626" : "#4f46e5", // red if low
-          textColor: "#111827",
+          pathColor: isLow ? "#dc2626" : "#4f46e5",
+          textColor: "#FFFFFF",
           trailColor: "#e5e7eb",
           textSize: "16px",
+          pathTransitionDuration: 0.5,
         })}
       />
     </div>
